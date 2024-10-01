@@ -20,7 +20,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/cars/new", (req, res) => {
-  res.render("cars/new,ejs");
+  res.render("cars/new.ejs");
 });
 
 
