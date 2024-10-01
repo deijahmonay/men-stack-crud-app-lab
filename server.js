@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 // GET /
-app.get("/cars", async (req, res) => {
+app.get("/", async (req, res) => {
   res.render("index.ejs");
 });
 
@@ -34,6 +34,12 @@ app.post("/cars", async(req, res) => {
   await Car.create(req.body);
   res.redirect("/cars/new")
 });
+
+app.get('/cars', async(req, res) => {
+  const allCars = await Car.find();
+  console.log(allCars);
+  res.send("Welcome to the cars index page!")
+})
 
 
 
