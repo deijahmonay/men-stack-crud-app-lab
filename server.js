@@ -20,8 +20,8 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/cars/new", (req, res) => {
-  res.send("This route sends user a form page")
-})
+  res.render("cars/new,ejs");
+});
 
 
 
