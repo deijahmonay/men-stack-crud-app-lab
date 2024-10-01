@@ -5,3 +5,6 @@ const carSchema = new mongoose.Schema({
   model: String,
   isOn: Boolean,
 });
+
+
+const Car = mongoose.model("Car", carSchema);
