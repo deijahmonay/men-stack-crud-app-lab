@@ -22,7 +22,12 @@ app.get("/cars/new", (req, res) => {
 });
 
 app.post("/cars", async (req, res) => {
-  console.log(req.body);
+  if (req.body.isOn === 'on') {
+    req.body.isOn = true;
+  } else {
+    req.body.isOn = false;
+  }
+  await Car.create(req.body);
   res.redirect("/cars/new");
 });
 
