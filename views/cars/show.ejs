@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= car.make %></title>
+  </head>
+  <body>
+    <a href="/cars/">Back to Cars</a>
+    <h1><%= car.make %></h1>
+    <% if (car.isOn) { %> 
+    <p>This car is started!</p>
+    <% } else { %>
+    <p>This car isn't started</p>
+  <% } %>
+  </body>
+</html>

@@ -29,7 +29,7 @@ app.get("/cars/new", (req, res) => {
 
 app.get("/cars/:carId", async (req, res) => {
   const foundCar = await Car.findById(req.params.carId)
-  res.render("/cars/show.ejs", { car: foundCar });
+  res.render("cars/show.ejs", { car: foundCar });
 });
 
 app.post("/cars", async (req, res) => {
@@ -42,9 +42,6 @@ app.post("/cars", async (req, res) => {
   res.redirect("/cars");
 });
 
-app.get("/cars/:carId", (req, res) => {
-  res.send(`This route renders the show page for car id: ${req.params/carId}!`)
-})
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
