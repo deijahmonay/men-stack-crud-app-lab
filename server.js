@@ -56,6 +56,15 @@ app.get("/cars/:carId/edit", async (req, res) => {
   res.render("cars/edit.ejs", { car: foundCar });
 });
 
+app.put("/cars/:carId", async (req, res) => {
+  if (req.body.isOn === 'on') {
+    req.body.isOn = true;
+  } else {
+    req.body.isOn = falses;
+  }
+  await Car.findByIdAndUpdate(req.params.carId, req.body);
+  res.redirect(`/cars/${req.params.carId}`);
+});
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");

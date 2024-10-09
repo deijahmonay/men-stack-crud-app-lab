@@ -1,0 +1,14 @@
+<body>
+
+  <h1>Edit <%= car.make %></h1>
+  <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+    <label for="make">Make:</label>
+    <input type="text" name="make" id="make" value="<%= car.make %>" />
+
+    <label for="isOn">Car is Started?</label>
+    <input type="checkbox" name="isOn" <% if (car.isOn) { %>checked<% } %> id="isOn" />
+
+    <button type="submit">Update Car</button>
+  </form>
+  <a href="/cars">Back to Cars</a>
+</body>
