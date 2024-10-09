@@ -16,6 +16,9 @@ app.get("/", async (req, res) => {
   res.render("index.ejs");
 });
 
+app.get("/cars/new", (req, res) => {
+  res.send("This route sends the user a car forms page");
+});
 
 
 app.listen(4000, () => {
