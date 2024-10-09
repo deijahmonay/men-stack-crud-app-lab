@@ -9,7 +9,7 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-
+const Car = require("./models/car.js")
 
 
 app.get("/", async (req, res) => {
