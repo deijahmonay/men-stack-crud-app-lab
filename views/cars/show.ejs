@@ -13,5 +13,8 @@
     <% } else { %>
     <p>This car isn't started</p>
   <% } %>
+  <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+    <button type="submit">Delete <%= car.make %></button>
+  </form>
   </body>
 </html>

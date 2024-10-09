@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+const morgan = require("morgan");
 const app = express();
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -12,6 +14,8 @@ mongoose.connection.on("connected", () => {
 const Car = require("./models/car.js")
 
 app.use(express.urlencoded({ extended:false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
 
 app.get("/", async (req, res) => {
   res.render("index.ejs");
@@ -39,6 +43,11 @@ app.post("/cars", async (req, res) => {
     req.body.isOn = false;
   }
   await Car.create(req.body);
+  res.redirect("/cars");
+});
+
+app.delete("/cars/:carId", async (req, res) => {
+  await Car.findByIdAndDelete(req.params.carId);
   res.redirect("/cars");
 });
 
