@@ -9,5 +9,17 @@
   </head>
   <body>
     <h1>Create a New Car!</h1>
+    <form action="/cars" method="POST">
+      <label for="make">Make:</label>
+      <input type="text" name="make" id="make" />
+
+      <label for="model">Model</label>
+      <input type="text" name="model" id="make" />
+
+      <label for="isOn">Car Started?</label>
+      <input type="checkbox" name="isOn" id="isOn" />
+
+      <button type="submit">Add Car</button>
+    </form>
   </body>
 </html>
