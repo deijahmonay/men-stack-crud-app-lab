@@ -12,7 +12,7 @@
     <h1>All Cars</h1>
     <ul>
       <% cars.forEach(car => { %>
-      <li><%= car.make %></li>
+      <li><a href="/cars/<%= car._id %>"><%= car.make %></a></li>
     <% }); %>
     </ul>
   </body>
