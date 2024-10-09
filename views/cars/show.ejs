@@ -15,6 +15,8 @@
   <% } %>
   <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
     <button type="submit">Delete <%= car.make %></button>
+    <a href="/cars/<%= car._id %>/edit">Edit <%= car.make %></a>
+    <a href="/cars">Bsck to Cars</a>
   </form>
   </body>
 </html>

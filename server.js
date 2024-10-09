@@ -51,6 +51,11 @@ app.delete("/cars/:carId", async (req, res) => {
   res.redirect("/cars");
 });
 
+app.get("/cars/:carId/edit", async (req, res) => {
+  const foundCar = await Car.findById(req.params.carId);
+  res.render("cars/edit.ejs", { car: foundCar });
+});
+
 
 app.listen(4000, () => {
   console.log("Listening on port 4000");
